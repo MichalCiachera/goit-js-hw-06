@@ -1,25 +1,14 @@
-const listWithClass = document.querySelectorAll(".item");
+const categoriesList = document.querySelector("#categories");
 
-const first = listWithClass[0];
+const categoryItems = categoriesList.querySelectorAll("li.item");
 
-const firstList = first.childNodes;
+console.log("Number of categories:", categoryItems.length);
 
-const second = listWithClass[1];
+categoryItems.forEach((categoryItem) => {
+  const categoryTitle = categoryItem.querySelector("h2");
 
-const secondList = second.childNodes;
+  const categoryElements = categoryItem.querySelectorAll("ul li");
 
-const third = listWithClass[2];
-
-const thirdList = third.childNodes;
-
-const message = `Number Of categories: ${listWithClass.length}
-
-Category: ${firstList[1].textContent}
-Element: ${firstList[3].children.length}
-
-Category: ${secondList[1].textContent}
-Element: ${secondList[3].children.length}
-
-Category: ${thirdList[1].textContent}
-Element: ${thirdList[3].children.length}`;
-console.log(message);
+  console.log("Category:", categoryTitle.textContent);
+  console.log("Elements:", categoryElements.length);
+});
